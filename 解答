@@ -1,0 +1,37 @@
+import collections
+count = 0
+list_big = []
+list_nums = []
+list_words = []
+with open('input.text') as input:
+    for line in input:
+        count += 1
+    for i in range(count-2):
+        line_1 = input().split(':')
+        list_nums.append(int(line_1[0]))
+        list_words.append(line_1[1])
+    m = int(input())
+dic = dict(zip(list_nums, list_words))
+ok_nums = []
+ok_words = []
+for n in dic:
+    if m % n == 0:
+        ok_nums.append(n)
+
+for l in ok_nums:
+    ok_words.append(dic[l])
+
+ans = ''.join(ok_words)
+print(ans)
+
+
+
+
+
+        
+
+
+
+        
+
+
